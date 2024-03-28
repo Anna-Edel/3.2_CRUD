@@ -13,6 +13,11 @@ class ProductPositionSerializer(serializers.ModelSerializer):
     class Meta:
         model = StockProduct
         fields = ['produkt', 'quantity', 'price']
+         product = models.ForeignKey(
+            Product,
+            on_delete=models.CASCADE,
+            related_name='position',
+        )
 
 
 
